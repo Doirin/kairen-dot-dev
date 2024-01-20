@@ -1,9 +1,13 @@
-import logo from '../img/pfp.png'
+// import logo from '../../public/pfp.png'
 const Home = () => {
     return (
     <>
-        <p id="name">Kairen Vanspark</p>
-        <img src={logo} width="400px" height="400px"/>
+        <div>
+            <p id="name">Kairen Vanspark</p>
+        </div>
+        <div>
+            <img src='/pfp.png' width="400px" height="400px"/>
+        </div>
     </>
     )
 };

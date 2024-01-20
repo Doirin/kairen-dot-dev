@@ -1,13 +1,14 @@
 .navbar {
-    text-align: center;
-    width: 35%;
-    background-color: #8c2543;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
     border-radius: 20px;
     opacity: 1;
     position:absolute;
     top: 15%;
     animation: 1.5s opacity, 1.5s moveNavbarTop;
-    box-shadow: 3px 3px 3px #000000;
+    box-shadow: 3px 3px 3px var(--tertiary-color);
 }
 
 .navbar ul {
@@ -19,18 +20,18 @@
     padding: 5px;
 }
 .content {
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    width: 50%;
-    height: 60%;
-    top: 25%;
-    /*background-color: #166995;*/
+    top: 30%;
     animation: 1.5s opacity, 1.5s moveContentTop;
 }
 #name {
-    font-family: "Tangerine Regular", serif;
-    font-size: 3em;
+    font-family: "Tangerine Regular", cursive;
+    font-size: 3rem;
     font-weight: lighter;
 }
 @keyframes opacity {
@@ -49,13 +50,11 @@
     100% {
         overflow: hidden;
         top: 15%;
-        /*overflow: auto;*/
     }
 }
 
 @keyframes moveContentTop {
     0% {
-        /*overflow: hidden;*/
         top: 100%;
     }
     100% {

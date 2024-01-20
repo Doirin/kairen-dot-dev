@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './css/App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./pages/Layout";
@@ -10,6 +9,7 @@ import NoPage from "./pages/NoPage";
 import Info from "./pages/Info";
 import './css/Home.css'
 import './css/Elements.css'
+import './css/Properties.css'
 
 function App() {
   return (

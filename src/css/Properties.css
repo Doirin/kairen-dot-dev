@@ -1,0 +1,23 @@
+@property --text-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f0f0f8;
+}
+
+@property --primary-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #8c2543;
+}
+
+@property --secondary-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #166995;
+}
+
+@property --tertiary-color  {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #2a283e;
+}
