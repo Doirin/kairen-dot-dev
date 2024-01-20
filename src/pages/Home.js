@@ -1,4 +1,3 @@
-// import logo from '../../public/pfp.png'
 const Home = () => {
     return (
     <>
