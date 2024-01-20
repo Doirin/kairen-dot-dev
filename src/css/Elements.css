@@ -1,0 +1,66 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    opacity: 1;
+    position:absolute;
+    top: 15%;
+    animation: 1.5s opacity, 1.5s moveNavbarTop;
+    box-shadow: 3px 3px 3px var(--tertiary-color);
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.navbar ul > li {
+    display: inline-block;
+    padding: 5px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    animation: 1.5s opacity, 1.5s moveContentTop;
+}
+#name {
+    font-family: "Tangerine Regular", cursive;
+    font-size: 3rem;
+    font-weight: lighter;
+}
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveNavbarTop {
+    0% {
+        top: 50%;
+    }
+    100% {
+        overflow: hidden;
+        top: 15%;
+    }
+}
+
+@keyframes moveContentTop {
+    0% {
+        top: 100%;
+    }
+    100% {
+        overflow: hidden;
+        top: 25%;
+
+    }
+}
+

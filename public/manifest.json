@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "Kairen Dot Dev",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -16,6 +16,11 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "pfp.png",
+      "type": "image/png",
+      "sizes": "400x400"
     }
   ],
   "start_url": ".",
