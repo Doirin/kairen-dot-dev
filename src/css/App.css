@@ -1,7 +1,3 @@
-.App {
-    text-align: center;
-}
-
 html, body, #root {
     height: 100vh;
     background: linear-gradient(135deg, var(--primary-color) 0%, rgba(42, 40, 62, 1) 50%, var(--secondary-color) 100%) no-repeat fixed;
