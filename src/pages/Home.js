@@ -5,7 +5,7 @@ const Home = () => {
             <p className="title">Kairen Vanspark</p>
         </div>
         <div>
-            <img id="icon" src='/pfp.png' width="400px" height="400px" alt="icon"/>
+            <img id="icon" src='/pfp.jpg' width="400px" height="400px" alt="icon"/>
         </div>
     </>
     )

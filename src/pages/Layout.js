@@ -31,12 +31,8 @@ const Layout = () => {
                             <li key={link.id}>
                                 <NavLink
                                     to={`${link.path}`}
-                                    className={({ isActive, isPending }) =>
-                                        isActive
-                                            ? "active"
-                                            : isPending
-                                                ? ""
-                                                : ""
+                                    className={({ isActive }) =>
+                                        isActive ? "active" : ""
                                     }
                                 >
                                     {`${link.title}`}
@@ -50,7 +46,7 @@ const Layout = () => {
                     <SwitchTransition>
                         <CSSTransition
                             key={location.pathname}
-                            timeout={1000}
+                            timeout={500}
                             classNames="page"
                             unmountOnExit
                         >

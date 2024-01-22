@@ -46,11 +46,3 @@ p {
 a {
     font-size: 1.25rem;
 }
-
-@media (max-width: 800px) {
-    #icon {
-        width: 200px;
-        height: 200px;
-    }
-
-}
