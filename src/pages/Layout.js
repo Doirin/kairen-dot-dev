@@ -1,28 +1,66 @@
-import { Outlet, Link } from "react-router-dom";
-
+import {useOutlet, useLocation, NavLink} from "react-router-dom";
+import {SwitchTransition, CSSTransition} from "react-transition-group";
 const Layout = () => {
+    const location = useLocation();
+    const currentOutlet = useOutlet();
+    const links = [
+        {
+            title: "Home",
+            path: "/",
+        },
+        {
+            title: "Fursona Info",
+            path: "/info",
+        },
+        {
+            title: "Gallery",
+            path: "/gallery",
+        },
+        {
+            title: "Socials",
+            path: "/socials",
+        },
+    ];
+
     return (
         <>
             <div className="navbar">
                 <nav>
                     <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/info">Character Info</Link>
-                        </li>
-                        <li>
-                            <Link to="/gallery">Fursuiting Gallery</Link>
-                        </li>
-                        <li>
-                            <Link to="/socials">Socials</Link>
-                        </li>
+                        {links.map((link) => (
+                            <li key={link.id}>
+                                <NavLink
+                                    to={`${link.path}`}
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "active"
+                                            : isPending
+                                                ? ""
+                                                : ""
+                                    }
+                                >
+                                    {`${link.title}`}
+                                </NavLink>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </div>
             <div className="content">
-                <Outlet/>
+                    <SwitchTransition>
+                        <CSSTransition
+                            key={location.pathname}
+                            timeout={1000}
+                            classNames="page"
+                            unmountOnExit
+                        >
+                            {() => (
+                                <div className="page">
+                                    {currentOutlet}
+                                </div>
+                            )}
+                        </CSSTransition>
+                    </SwitchTransition>
             </div>
         </>
     )

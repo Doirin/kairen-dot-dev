@@ -28,7 +28,8 @@ body::-webkit-scrollbar {
 a {
     color: var(--text-color);
     text-decoration: none;
-
+    margin: 5px;
+    padding: 5px;
 }
 
 a:visited {
@@ -46,17 +47,10 @@ a {
     font-size: 1.25rem;
 }
 
-img {
-    border-radius: 75%;
-    border: 5px solid #2a283e;
-    box-shadow: 5px 5px 5px;
-    max-width: 100%;
-    max-height: 100%;
-}
-
 @media (max-width: 800px) {
-    img {
+    #icon {
         width: 200px;
         height: 200px;
     }
+
 }
