@@ -2,10 +2,10 @@ const Home = () => {
     return (
     <>
         <div>
-            <p id="name">Kairen Vanspark</p>
+            <p className="title">Kairen Vanspark</p>
         </div>
         <div>
-            <img src='/pfp.png' width="400px" height="400px"/>
+            <img id="icon" src='/pfp.jpg' width="400px" height="400px" alt="icon"/>
         </div>
     </>
     )
