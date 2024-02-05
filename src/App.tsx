@@ -2,13 +2,14 @@ import './css/App.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
+import GalleryModal from "./pages/GalleryModal";
 import Socials from "./pages/Socials";
 import NoPage from "./pages/NoPage";
 import Info from "./pages/Info";
 import './css/Elements.css'
 import './css/Properties.css'
 import './css/Animations.css'
+import Gallery from "./pages/Gallery";
 
 function App() {
     const router = createBrowserRouter([
@@ -27,7 +28,13 @@ function App() {
                 },
                 {
                     path:"gallery",
-                    element: <Gallery/>
+                    element: <Gallery/>,
+                    children: [
+                        {
+                            path: ":galleryName",
+                            element: <GalleryModal/>
+                        }
+                    ]
                 },
                 {
                     path:"socials",

@@ -5,18 +5,22 @@ const Layout = () => {
     const currentOutlet = useOutlet();
     const links = [
         {
+            id: 0,
             title: "Home",
             path: "/",
         },
         {
+            id: 1,
             title: "Fursona Info",
             path: "/info",
         },
         {
+            id: 2,
             title: "Gallery",
-            path: "/gallery",
+            path: "/gallery"
         },
         {
+            id: 3,
             title: "Socials",
             path: "/socials",
         },
