@@ -1,6 +1,6 @@
 import {useOutlet, useLocation, NavLink} from "react-router-dom";
 import {SwitchTransition, CSSTransition} from "react-transition-group";
-const Layout = () => {
+function Layout() {
     const location = useLocation();
     const currentOutlet = useOutlet();
     const links = [
@@ -25,14 +25,14 @@ const Layout = () => {
             path: "/socials",
         },
     ];
-
+    // document.getElementById('navbarButton3').setAttribute()
     return (
         <>
             <div className="navbar">
                 <nav>
                     <ul>
                         {links.map((link) => (
-                            <li key={link.id}>
+                            <li key={link.id} id={'navbarButton'+link.id.toString()}>
                                 <NavLink
                                     to={`${link.path}`}
                                     className={({ isActive }) =>

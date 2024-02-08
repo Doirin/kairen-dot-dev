@@ -1,16 +1,17 @@
 import {NavLink, useOutlet} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import {getStorage, listAll, ref} from "firebase/storage";
-const Gallery = () => {
+import {FolderObject} from "../interfaces/FolderObject";
+function Gallery() {
     const Storage = getStorage();
     const StorageRef = ref(Storage, "gallery");
     const [GalleriesLoaded, setGalleriesLoaded] = useState(false);
-    let galleryList = useRef([]);
+    let galleryList = useRef(Array(0));
     useEffect(() => {
         listAll(StorageRef).then(r => {
             let idCounter = 0;
             r.prefixes.forEach(folder => {
-                if (galleryList.current.find((item) => item.name === folder.name) === undefined) {
+                if (galleryList.current.find((item: FolderObject) => item.name === folder.name) === undefined) {
                     galleryList.current.push({
                         id: idCounter,
                         name: folder.name

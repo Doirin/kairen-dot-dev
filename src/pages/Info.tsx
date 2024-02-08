@@ -1,5 +1,5 @@
 import ModalImage from "react-modal-image";
-const Info = () => {
+function Info() {
     return (
         <>
             <ModalImage small="/refsheetSmall.jpg" large="/refsheet.jpg" alt="Reference sheet"/>
