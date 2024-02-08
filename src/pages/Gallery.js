@@ -1,32 +1,45 @@
 import {NavLink, useOutlet} from "react-router-dom";
+import {useEffect, useRef, useState} from "react";
+import {getStorage, listAll, ref} from "firebase/storage";
 const Gallery = () => {
-    const outlet = useOutlet();
-    const links = [
-        {
-            id: 0,
-            title: "Furtecowo",
-            path: "Furtecowo",
-        },
-        {
-            id: 1,
-            title: "SFFW",
-            path: "sffw",
-        }
-    ];
+    const Storage = getStorage();
+    const StorageRef = ref(Storage, "gallery");
+    const [GalleriesLoaded, setGalleriesLoaded] = useState(false);
+    let galleryList = useRef([]);
+    useEffect(() => {
+        listAll(StorageRef).then(r => {
+            let idCounter = 0;
+            r.prefixes.forEach(folder => {
+                if (galleryList.current.find((item) => item.name === folder.name) === undefined) {
+                    galleryList.current.push({
+                        id: idCounter,
+                        name: folder.name
+                    })
+                    idCounter++;
+                }
+            });
+            setGalleriesLoaded(true);
+        })
+    });
 
+    const outlet = useOutlet();
+
+    if (!GalleriesLoaded) {
+        return <></>;
+    }
     return (
         <>
             <nav className="modalNavbar">
                 <ul>
-                    {links.map((link) => (
+                    {galleryList.current.map((link) => (
                         <li key={link.id}>
                             <NavLink
-                                to={`${link.path}`}
+                                to={`${link.name}`}
                                 className={({isActive}) =>
-                                    isActive ? "active" : ""
+                                    isActive ? "navButton active" : "navButton"
                                 }
                             >
-                                {`${link.title}`}
+                                {`${link.name}`}
                             </NavLink>
                         </li>
                     ))}

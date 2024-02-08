@@ -1,23 +1,36 @@
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 import {useParams} from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import firebaseConfig from "../firebaseConfig";
 import {useEffect, useRef, useState} from "react";
 
 function GalleryModal() {
-    initializeApp(firebaseConfig);
     const {galleryName} = useParams();
-    const storage = getStorage();
-    const storageRef = ref(storage, galleryName);
-    const [downloadUrl, setDownloadUrl] = useState('');
-    let tempUrls = useRef([]);
+    const Storage = getStorage();
+    const GalleryRef = ref(Storage, 'gallery/'+galleryName);
+    const ThumbnailsRef = ref(Storage, 'thumbnails/'+galleryName);
+    const [ThumbnailUrl, setThumbnailUrl] = useState('');
+    const [GalleryUrl, setGalleryUrl] = useState('');
+    let galleryUrls = useRef([]);
+    let thumbnailUrls = useRef([]);
 
     useEffect(() => {
-        listAll(storageRef).then(r => {
+        listAll(GalleryRef).then(r => {
             r.items.forEach(file => {
                 getDownloadURL(file).then(downloadURL => {
-                    tempUrls.current.push(downloadURL)
-                    setDownloadUrl(downloadURL)
+                    galleryUrls.current.push(downloadURL);
+                    setGalleryUrl(downloadURL);
+                    galleryUrls.current.sort();
+                });
+            })
+        })
+    }, []);
+
+    useEffect(() => {
+        listAll(ThumbnailsRef).then(r => {
+            r.items.forEach(file => {
+                getDownloadURL(file).then(downloadURL => {
+                    thumbnailUrls.current.push(downloadURL);
+                    setThumbnailUrl(downloadURL);
+                    thumbnailUrls.current.sort();
                 });
             })
         })
@@ -26,11 +39,13 @@ function GalleryModal() {
         <>
             <div className='gallery'>
                 {
-                    tempUrls.current.map((imageSrc) => {
+                    galleryUrls.current.map((galleryURL, index) => {
                         return (
-                            <div key={imageSrc} className='img-container'>
-                                <img className='galleryImg' src={imageSrc}/>
-                            </div>
+                                <div id={galleryURL} className='img-container'>
+                                    <a className='img-link' href={galleryURL} target='_blank' rel='noreferrer'>
+                                        <img className='galleryImg' src={thumbnailUrls.current.at(index)} alt={thumbnailUrls.current.at(index)}/>
+                                    </a>
+                                </div>
                         )
                     })
                 }

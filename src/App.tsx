@@ -10,8 +10,11 @@ import './css/Elements.css'
 import './css/Properties.css'
 import './css/Animations.css'
 import Gallery from "./pages/Gallery";
+import {initializeApp} from "firebase/app";
+import firebaseConfig from "./firebaseConfig";
 
 function App() {
+    initializeApp(firebaseConfig);
     const router = createBrowserRouter([
         {
             path: "/",

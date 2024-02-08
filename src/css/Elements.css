@@ -61,9 +61,10 @@
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 1em 1em;
+    margin-top: 10px;
 }
 
-.img-container {
+.img-container .img-link {
     display: flex;
     justify-content: center;
     align-items: center;

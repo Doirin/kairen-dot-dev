@@ -36,7 +36,7 @@ const Layout = () => {
                                 <NavLink
                                     to={`${link.path}`}
                                     className={({ isActive }) =>
-                                        isActive ? "active" : ""
+                                        isActive ? "navButton active" : "navButton"
                                     }
                                 >
                                     {`${link.title}`}
