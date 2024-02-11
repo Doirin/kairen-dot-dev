@@ -6,5 +6,5 @@ function Info() {
             <p>Reference Sheet done by <a id="artist" rel="noreferrer" href="https://www.deviantart.com/tayga-niko-j" target="_blank">Tay-Niko-Y</a> ♥</p>
         </>
     )
-};
+}
 export default Info;

@@ -1,9 +1,15 @@
 import {useOutlet, useLocation, NavLink} from "react-router-dom";
 import {SwitchTransition, CSSTransition} from "react-transition-group";
+import {useEffect, useRef, useState} from "react";
+import {getStorage, listAll, ref} from "firebase/storage";
+import {FolderObject} from "../interfaces/FolderObject";
 function Layout() {
-    const location = useLocation();
-    const currentOutlet = useOutlet();
-    const links = [
+    const Storage = getStorage();
+    const StorageRef = ref(Storage, "gallery");
+    const [, setGalleriesLoaded] = useState(false);
+    const Location = useLocation();
+    const CurrentOutlet = useOutlet();
+    const Links = useRef([
         {
             id: 0,
             title: "Home",
@@ -16,22 +22,40 @@ function Layout() {
         },
         {
             id: 2,
-            title: "Gallery",
-            path: "/gallery"
-        },
-        {
-            id: 3,
             title: "Socials",
             path: "/socials",
         },
-    ];
-    // document.getElementById('navbarButton3').setAttribute()
+    ]);
+    let gallery = useRef({
+            id: 3,
+            title: "Gallery",
+            path: "/gallery",
+            children: Array<FolderObject>(0)
+    });
+
+    useEffect(() => {
+        listAll(StorageRef).then(r => {
+            let idCounter = 4;
+            r.prefixes.forEach(folder => {
+                if (gallery.current.children.find((item: FolderObject) => item.name === folder.name) === undefined) {
+                    gallery.current.children.push({
+                        id: idCounter,
+                        name: folder.name
+                    })
+                    idCounter++;
+                }
+            });
+            gallery.current.children.sort();
+            setGalleriesLoaded(true);
+        })
+    });
+
     return (
         <>
             <div className="navbar">
                 <nav>
                     <ul>
-                        {links.map((link) => (
+                        {Links.current.map((link) => (
                             <li key={link.id} id={'navbarButton'+link.id.toString()}>
                                 <NavLink
                                     to={`${link.path}`}
@@ -43,20 +67,35 @@ function Layout() {
                                 </NavLink>
                             </li>
                         ))}
+                        <li id={'navbarButton'+gallery.current.id.toString()} className='dropdown' >
+                            <NavLink to={`/gallery/${gallery.current.children[0].name}`}
+                                     className={({ isActive }) =>
+                                         isActive ? "navButton active" : "navButton"
+                                     }> Gallery
+                                <p className='arrow down'></p>
+                                <div className='dropdown-content'>
+                                    {gallery.current.children.map((folder) => (
+                                        <NavLink key={folder.name} to={`/gallery/${folder.name}`}>
+                                            {folder.name}
+                                        </NavLink>
+                                    ))}
+                                </div>
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div className="content">
                     <SwitchTransition>
                         <CSSTransition
-                            key={location.pathname}
+                            key={Location.pathname}
                             timeout={500}
                             classNames="page"
                             unmountOnExit
                         >
                             {() => (
                                 <div className="page">
-                                    {currentOutlet}
+                                    {CurrentOutlet}
                                 </div>
                             )}
                         </CSSTransition>
@@ -64,6 +103,6 @@ function Layout() {
             </div>
         </>
     )
-};
+}
 
 export default Layout;
