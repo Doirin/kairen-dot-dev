@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 
 function GalleryModal() {
-    const {galleryName} = useParams();
+    let {galleryName} = useParams();
     const Storage = getStorage();
     const GalleryRef = useRef(ref(Storage, 'gallery/'+galleryName));
     const ThumbnailsRef = useRef(ref(Storage, 'thumbnails/'+galleryName));
@@ -19,7 +19,6 @@ function GalleryModal() {
                     galleryUrls.current.sort();
                     if(r.items.length === galleryUrls.current.length && galleryUrls.current.length === thumbnailUrls.current.length) {
                         setRenderState(downloadURL);
-                        console.log('finished')
                     }
                 });
             })
@@ -31,7 +30,6 @@ function GalleryModal() {
                     thumbnailUrls.current.sort();
                     if(r.items.length === thumbnailUrls.current.length && galleryUrls.current.length === thumbnailUrls.current.length) {
                         setRenderState(downloadURL);
-                        console.log('finished')
                     }
                 });
             })

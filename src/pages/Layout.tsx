@@ -68,7 +68,7 @@ function Layout() {
                             </li>
                         ))}
                         <li id={'navbarButton'+gallery.current.id.toString()} className='dropdown' >
-                            <NavLink to={`/gallery/${gallery.current.children[0].name}`}
+                            <NavLink to={`/gallery`}
                                      className={({ isActive }) =>
                                          isActive ? "navButton active" : "navButton"
                                      }> Gallery

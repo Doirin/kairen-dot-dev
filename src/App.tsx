@@ -34,6 +34,10 @@ function App() {
                     element: <Gallery/>,
                     children: [
                         {
+                            path: "",
+                            element:<GalleryModal/>
+                        },
+                        {
                             path: ":galleryName",
                             element: <GalleryModal/>
                         }
