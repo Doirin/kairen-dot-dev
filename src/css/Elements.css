@@ -3,12 +3,12 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
-    border-radius: 20px;
+    border-radius: 2rem;
     position: relative;
     opacity: 1;
     animation: 1s opacity, 1s moveNavbarTop;
     box-shadow: 3px 3px 3px var(--tertiary-color);
-    margin-top:2.5em;
+    margin-top:2.5rem;
 }
 
 .navbar ul {
@@ -18,7 +18,7 @@
 
 .navbar ul > li {
     display: inline-block;
-    padding: 5px;
+    padding: 0.5rem;
 }
 
 .modalNavbar ul {
@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 2.5em;
+    margin-top: 2.5rem;
     animation: 1s opacity, 1s moveContentTop;
 }
 
@@ -46,12 +46,12 @@
     font-size: 3rem;
     font-weight: lighter;
     color: var(--text-color);
-    margin: 16px;
+    margin: 1rem;
 }
 
 .active {
     background-color: var(--secondary-color);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: 2px solid
 }
 
@@ -60,22 +60,22 @@
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 1em 1em;
-    margin-top: 10px;
+    gap: 1rem 1rem;
+    margin-top: 1rem;
 }
 
 .img-container .img-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20em;
-    height: 20em;
+    width: 25rem;
+    height: 25rem;
 }
 
 .galleryImg {
     max-width: 100%;
     max-height: 100%;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: 0.1em solid #f0f0f8;
 }
 
@@ -84,8 +84,8 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     opacity: 1;
     position: static;
 }
@@ -95,13 +95,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
 }
 
 #icon {
     border-radius: 75%;
-    border: 5px solid #2a283e;
-    box-shadow: 5px 5px 5px;
+    border: 0.5rem solid #2a283e;
+    box-shadow: 0.5rem 0.5rem 0.5rem;
 }
 
 #artist {
@@ -149,9 +149,9 @@
     display: none;
     position: absolute;
     background-color: var(--primary-color);
-    margin-top:0.2em;
+    margin-top:0.2rem;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -179,8 +179,8 @@
 
 @media (max-width: 800px) {
     #icon {
-        width: 10em;
-        height: 10em;
+        width: 10rem;
+        height: 10rem;
     }
     .content {
         top: 0;

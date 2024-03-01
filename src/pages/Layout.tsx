@@ -35,7 +35,7 @@ function Layout() {
 
     useEffect(() => {
         listAll(StorageRef).then(r => {
-            let idCounter = 4;
+            let idCounter = gallery.current.id+1;
             r.prefixes.forEach(folder => {
                 if (gallery.current.children.find((item: FolderObject) => item.name === folder.name) === undefined) {
                     gallery.current.children.push({

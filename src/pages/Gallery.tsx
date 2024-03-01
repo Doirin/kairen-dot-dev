@@ -6,7 +6,7 @@ function Gallery() {
         return (
             <>
                 <div className="modalContent">
-                    <img src='/logo192.png' alt='logo192.png'/>
+                    <img src='/logo192.png' alt='Kairen Icon'/>
                 </div>
             </>
         )

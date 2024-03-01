@@ -12,23 +12,23 @@ function GalleryModal() {
     let thumbnailUrls = useRef(Array(0));
 
     useEffect(() => {
-        listAll(GalleryRef.current).then(r => {
-            r.items.forEach(file => {
+        listAll(GalleryRef.current).then(result => {
+            result.items.forEach(file => {
                 getDownloadURL(file).then(downloadURL => {
                     galleryUrls.current.push(downloadURL);
                     galleryUrls.current.sort();
-                    if(r.items.length === galleryUrls.current.length && galleryUrls.current.length === thumbnailUrls.current.length) {
+                    if(result.items.length === galleryUrls.current.length && galleryUrls.current.length === thumbnailUrls.current.length) {
                         setRenderState(downloadURL);
                     }
                 });
             })
         })
-        listAll(ThumbnailsRef.current).then(r => {
-            r.items.forEach((file, index) => {
+        listAll(ThumbnailsRef.current).then(result => {
+            result.items.forEach((file, index) => {
                 getDownloadURL(file).then(downloadURL => {
                     thumbnailUrls.current.push(downloadURL);
                     thumbnailUrls.current.sort();
-                    if(r.items.length === thumbnailUrls.current.length && galleryUrls.current.length === thumbnailUrls.current.length) {
+                    if(result.items.length === thumbnailUrls.current.length && galleryUrls.current.length === thumbnailUrls.current.length) {
                         setRenderState(downloadURL);
                     }
                 });
