@@ -2,7 +2,7 @@ function Socials() {
     return (
         <>
             <button name='Furaffinity' className='socialButton'>
-                <img className='icon' src='Fa_logo.svg' width='32' height='32' alt='Furaffinity icon'/>
+                <img className='icon' src='fa_logo.svg' width='32' height='32' alt='Furaffinity icon'/>
                 <a className='navButton' rel="noreferrer" target='_blank'
                    href='https://www.furaffinity.net/user/kairenvk'>Furaffinity</a>
             </button>

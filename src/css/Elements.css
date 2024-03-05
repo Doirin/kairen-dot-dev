@@ -160,33 +160,6 @@
     -webkit-transform: rotate(45deg);
 }
 
-@media (max-width: 800px) {
-    #icon {
-        width: 10rem;
-        height: 10rem;
-    }
-    .content {
-        top: 0;
-        position: relative;
-        text-align: center;
-        margin-top: 1em;
-    }
-    .navbar {
-        position: relative;
-    }
-    .navbar ul > li {
-        display: block;
-        text-align: center;
-    }
-
-    @keyframes moveNavbarTop {
-    }
-
-    @keyframes moveContentTop {
-    }
-
-}
-
 .navButton {
     color: var(--text-color);
     text-decoration: none;
@@ -218,4 +191,39 @@
 
 .tooltip:active:after, .tooltip:focus:after {
     content: 'Copied!';
+}
+
+@media (max-width: 800px) {
+    #icon {
+        width: 10rem;
+        height: 10rem;
+    }
+    .content {
+        top: 0;
+        position: relative;
+        text-align: center;
+        margin-top: 1em;
+    }
+    .navbar {
+        position: relative;
+    }
+    .navbar ul > li {
+        display: block;
+        text-align: center;
+    }
+
+    @keyframes moveNavbarTop {
+    }
+
+    @keyframes moveContentTop {
+    }
+
+    .navButton {
+        color: var(--text-color);
+        text-decoration: none;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
 }
