@@ -56,7 +56,7 @@ function Layout() {
                 <nav>
                     <ul>
                         {Links.current.map((link) => (
-                            <li key={link.id} id={'navbarButton'+link.id.toString()}>
+                            <li key={link.id} id={'navbarButton'+link.id.toString()} className='navButton'>
                                 <NavLink
                                     to={`${link.path}`}
                                     className={({ isActive }) =>
@@ -73,6 +73,7 @@ function Layout() {
                                          isActive ? "navButton active" : "navButton"
                                      }> Gallery
                                 <p className='arrow down'></p>
+                            </NavLink>
                                 <div className='dropdown-content'>
                                     {gallery.current.children.map((folder) => (
                                         <NavLink key={folder.name} to={`/gallery/${folder.name}`}>
@@ -80,7 +81,6 @@ function Layout() {
                                         </NavLink>
                                     ))}
                                 </div>
-                            </NavLink>
                         </li>
                     </ul>
                 </nav>

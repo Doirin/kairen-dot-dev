@@ -27,3 +27,33 @@
     transform: translateX(75%);
     transition: opacity 500ms, transform 500ms;
 }
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveNavbarTop {
+    0% {
+        top: 50%;
+    }
+    100% {
+        overflow: hidden;
+        top: 0;
+    }
+}
+
+@keyframes moveContentTop {
+    0% {
+        top: 100%;
+    }
+    100% {
+        overflow: hidden;
+        top: 0;
+
+    }
+}

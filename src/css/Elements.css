@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     position: relative;
     opacity: 1;
     animation: 1s opacity, 1s moveNavbarTop;
@@ -18,7 +18,7 @@
 
 .navbar ul > li {
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.25rem;
 }
 
 .modalNavbar ul {
@@ -52,7 +52,7 @@
 .active {
     background-color: var(--secondary-color);
     border-radius: 0.5rem;
-    border: 2px solid
+    border: 1px solid;
 }
 
 .gallery {
@@ -98,44 +98,27 @@
     margin-top: 0.5rem;
 }
 
+.socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 1px;
+    width: 20rem;
+}
+
 #icon {
     border-radius: 75%;
-    border: 0.5rem solid #2a283e;
+    border: 0.5rem solid #2a586e;
     box-shadow: 0.5rem 0.5rem 0.5rem;
 }
 
 #artist {
     text-decoration: underline;
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes moveNavbarTop {
-    0% {
-        top: 50%;
-    }
-    100% {
-        overflow: hidden;
-        top: 0;
-    }
-}
-
-@keyframes moveContentTop {
-    0% {
-        top: 100%;
-    }
-    100% {
-        overflow: hidden;
-        top: 0;
-
-    }
 }
 
 .dropdown {
@@ -145,11 +128,11 @@
 
 .dropdown-content {
     border: solid 2px var(--text-color);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     display: none;
     position: absolute;
     background-color: var(--primary-color);
-    margin-top:0.2rem;
+    margin-top:0.5rem;
     min-width: 160px;
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     z-index: 1;
@@ -177,6 +160,39 @@
     -webkit-transform: rotate(45deg);
 }
 
+.navButton {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.tooltip {
+}
+
+.tooltip:before {
+    content: '';
+    display: none;
+}
+
+.tooltip:after {
+    content: 'Copy to Clipboard';
+    display: none;
+}
+
+.tooltip:hover:before {
+    display:block;
+}
+
+.tooltip:hover:after {
+    display:block;
+}
+
+.tooltip:active:after, .tooltip:focus:after {
+    content: 'Copied!';
+}
+
 @media (max-width: 800px) {
     #icon {
         width: 10rem;
@@ -200,6 +216,14 @@
     }
 
     @keyframes moveContentTop {
+    }
+
+    .navButton {
+        color: var(--text-color);
+        text-decoration: none;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
     }
 
 }
