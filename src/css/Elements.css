@@ -168,6 +168,14 @@
     cursor: pointer;
 }
 
+.navButtonSocial {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
 .tooltip {
 }
 
@@ -222,14 +230,6 @@
         color: var(--text-color);
         text-decoration: none;
         margin-bottom: 1rem;
-        padding: 0.5rem;
-        cursor: pointer;
-    }
-
-    .navButtonSocial {
-        color: var(--text-color);
-        text-decoration: none;
-        margin: 0.5rem;
         padding: 0.5rem;
         cursor: pointer;
     }
