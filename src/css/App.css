@@ -25,9 +25,10 @@ body::-webkit-scrollbar {
     src: url("../fonts/Tangerine-Regular.ttf");
 }
 
-a:visited {
+a {
     color: var(--text-color);
 }
+
 
 p {
     font-size: 1rem;
