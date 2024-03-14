@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background-color: #8c2543;
     border-radius: 1.5rem;
     position: relative;
     opacity: 1;
     animation: 1s opacity, 1s moveNavbarTop;
-    box-shadow: 3px 3px 3px var(--tertiary-color);
+    box-shadow: 3px 3px 3px #2a283e;
     margin-top:2.5rem;
 }
 
@@ -45,12 +45,12 @@
     font-family: "Tangerine Regular", cursive;
     font-size: 3rem;
     font-weight: lighter;
-    color: var(--text-color);
+    color: #f0f0f8;
     margin: 1rem;
 }
 
 .active {
-    background-color: var(--secondary-color);
+    background-color: #166995;
     border-radius: 0.5rem;
     border: 1px solid;
 }
@@ -83,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background-color: #8c2543;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     opacity: 1;
@@ -102,11 +102,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background-color: #8c2543;
     margin-bottom: 1rem;
     border-radius: 2rem;
     border-style: solid;
-    border-color: var(--text-color);
+    border-color: #f0f0f8;
     border-width: 1px;
     width: 20rem;
 }
@@ -127,11 +127,11 @@
 }
 
 .dropdown-content {
-    border: solid 2px var(--text-color);
+    border: solid 2px #f0f0f8;
     border-radius: 0.5rem;
     display: none;
     position: absolute;
-    background-color: var(--primary-color);
+    background-color: #8c2543;
     margin-top:0.5rem;
     min-width: 160px;
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
@@ -161,7 +161,7 @@
 }
 
 .navButton {
-    color: var(--text-color);
+    color: #f0f0f8;
     text-decoration: none;
     margin: 0.5rem;
     padding: 0.5rem;
@@ -169,7 +169,7 @@
 }
 
 .navButtonSocial {
-    color: var(--text-color);
+    color: #f0f0f8;
     text-decoration: none;
     margin: 0.5rem;
     padding: 0.5rem;
@@ -227,7 +227,7 @@
     }
 
     .navButton {
-        color: var(--text-color);
+        color: #f0f0f8;
         text-decoration: none;
         margin-bottom: 1rem;
         padding: 0.5rem;

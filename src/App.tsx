@@ -7,7 +7,6 @@ import Socials from "./pages/Socials";
 import NoPage from "./pages/NoPage";
 import Info from "./pages/Info";
 import './css/Elements.css'
-import './css/Properties.css'
 import './css/Animations.css'
 import Gallery from "./pages/Gallery";
 import {initializeApp} from "firebase/app";

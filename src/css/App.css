@@ -1,6 +1,6 @@
 html, body, #root {
     height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(42, 40, 62, 1) 50%, var(--secondary-color) 100%) no-repeat fixed;
+    background: linear-gradient(135deg, #8c2543 0%, rgba(42, 40, 62, 1) 50%, #166995 100%) no-repeat fixed;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -26,14 +26,14 @@ body::-webkit-scrollbar {
 }
 
 a {
-    color: var(--text-color);
+    color: #f0f0f8;
 }
 
 
 p {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: #f0f0f8;
     margin: 1rem;
 }
 
